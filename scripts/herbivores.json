@@ -1,1 +1,19 @@
-["Giraffe", "Horse", "Sheep", "Cow", "Llama", "My Mom"]
+{
+    "animals": [
+        {
+            "name": "Giraffe"
+        },
+        {
+            "name": "Horse"
+        },
+        {
+            "name": "Sheep"
+        },
+        {
+            "name": "Cow"
+        },
+        {
+            "name": "Llama"
+        }
+    ]
+}
