@@ -4,7 +4,7 @@ module.exports = function(grunt) {
       'dist/bundle.js': ['javascripts/main.js']
     },
     jshint: {
-      files: ["scripts/**/*.js"],
+      files: ["scripts/**/*.js", "scripts/**/*.json"],
       options: {
         predef: ["document", "console"],
         esnext: true,
