@@ -1,1 +1,19 @@
-["Lion", "Tiger", "Bear", "Dinosaur", "Godzilla", "My Dad"]
+{
+    "animals": [
+        {
+            "name": "Lion"
+        },
+        {
+            "name": "Tiger"
+        },
+        {
+            "name": "Bear"
+        },
+        {
+            "name": "Godzilla"
+        },
+        {
+            "name": "Velociraptor"
+        }
+    ]
+}
