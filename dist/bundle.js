@@ -9,9 +9,10 @@ function loadCarnivores (callbackToInvoke) {
 
     request.addEventListener("load", function () {
         carnivores = JSON.parse(event.target.responseText);
+        carnivores = carnivores.animals;
         callbackToInvoke(carnivores);
     });
-    request.open("GET", "carnivores.json");
+    request.open("GET", "./scripts/carnivores.json");
     request.send();
 }
 
@@ -20,9 +21,10 @@ function loadHerbivores (callbackToInvoke) {
 
     request.addEventListener("load", function () {
         herbivores = JSON.parse(event.target.responseText);
+        herbivores = herbivores.animals;
         callbackToInvoke(herbivores);
     });
-    request.open("GET", "herbivores.json");
+    request.open("GET", "./scripts/herbivores.json");
     request.send();
 }
 
@@ -31,17 +33,16 @@ module.exports = {loadCarnivores, loadHerbivores};
 },{}],2:[function(require,module,exports){
 "use strict";
 
-console.log("hello!");
-
 const animalLoader = require("./animal");
+
 const carnivoreContainer = document.getElementById("carnivore-container");
 const herbivoreContainer = document.getElementById("herbivore-container");
-
 
 function showCarnivores(carnivores) {
     for (let i = 0; i < carnivores.length; i++){
         let parentNode = document.createElement("p");
         let animalName = document.createTextNode(carnivores[i].name);
+        console.log(carnivores[i].name);
         parentNode.appendChild(animalName);
         carnivoreContainer.appendChild(parentNode);
     }
@@ -56,6 +57,7 @@ function showHerbivores(herbivores) {
     }
     
 }
+
 
 animalLoader.loadCarnivores(showCarnivores);
 animalLoader.loadHerbivores(showHerbivores);

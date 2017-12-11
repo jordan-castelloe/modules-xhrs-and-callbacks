@@ -1,16 +1,15 @@
 "use strict";
 
-console.log("hello!");
-
 const animalLoader = require("./animal");
+
 const carnivoreContainer = document.getElementById("carnivore-container");
 const herbivoreContainer = document.getElementById("herbivore-container");
-
 
 function showCarnivores(carnivores) {
     for (let i = 0; i < carnivores.length; i++){
         let parentNode = document.createElement("p");
         let animalName = document.createTextNode(carnivores[i].name);
+        console.log(carnivores[i].name);
         parentNode.appendChild(animalName);
         carnivoreContainer.appendChild(parentNode);
     }
@@ -25,6 +24,7 @@ function showHerbivores(herbivores) {
     }
     
 }
+
 
 animalLoader.loadCarnivores(showCarnivores);
 animalLoader.loadHerbivores(showHerbivores);
