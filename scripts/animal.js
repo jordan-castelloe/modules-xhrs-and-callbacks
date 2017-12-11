@@ -10,7 +10,7 @@ function loadCarnivores (callbackToInvoke) {
         carnivores = JSON.parse(event.target.responseText);
         callbackToInvoke(carnivores);
     });
-    request.open("GET", "carnivores.json");
+    request.open("GET", "./scripts/carnivores.json");
     request.send();
 }
 
@@ -21,7 +21,7 @@ function loadHerbivores (callbackToInvoke) {
         herbivores = JSON.parse(event.target.responseText);
         callbackToInvoke(herbivores);
     });
-    request.open("GET", "herbivores.json");
+    request.open("GET", "./scripts/herbivores.json");
     request.send();
 }
 
